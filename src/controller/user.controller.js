@@ -32,7 +32,7 @@ const registration = async (req, res) => {
 
 const loginUser = async (req, res) => {
   const { userName, email, password, role = 'user' } = req.body
-  const user = userModel.findOne({
+  const user = await userModel.findOne({
     $or: [{ userName }, { email }],
   })
 

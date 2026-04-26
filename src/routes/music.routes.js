@@ -1,5 +1,6 @@
 const express = require('express')
-const { createMusic, albumCreate } = require('../controller/music.controller')
+const { artiestMiddleware } = require('../middlewares/artiest.middleware')
+const { createMusic, albumCreate, getAllMusic } = require('../controller/music.controller')
 const multer = require('multer')
 
 const router = express.Router()
@@ -8,7 +9,8 @@ const upload = multer({
   storage: multer.memoryStorage(),
 })
 
-router.post('/upload', upload.single('music'), createMusic)
-router.post('/album', albumCreate)
+router.post('/upload', artiestMiddleware, upload.single('music'), createMusic)
+router.post('/album', artiestMiddleware, albumCreate)
+router.get('/', getAllMusic)
 
 module.exports = router

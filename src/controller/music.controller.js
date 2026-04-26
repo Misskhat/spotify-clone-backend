@@ -1,4 +1,5 @@
 const musicModel = require('../model/music.model')
+const albumModel = require('../model/album.model')
 const jwt = require('jsonwebtoken')
 const { uploadImage } = require('../services/stroage.services')
 
@@ -8,7 +9,7 @@ const createMusic = async (req, res) => {
   if (!token) {
     return res.send({ message: 'Unauthorized access' })
   }
-  let decodedToken;
+  let decodedToken
   try {
     decodedToken = jwt.verify(token, process.env.JWT_TOKEN)
     if (decodedToken.role !== 'artist') {
@@ -38,4 +39,31 @@ const createMusic = async (req, res) => {
   })
 }
 
-module.exports = { createMusic }
+const albumCreate = async (req, res) => {
+  const token = req.cookies.token
+  if (!token) {
+    res.send({ message: 'Unauthorized access' })
+  }
+  try {
+    const decoded = await jwt.verify(token, process.env.JWT_TOKEN)
+    if (decoded.role !== 'artist') {
+      return res.send({ message: 'Sorry you do not have access to create album' })
+    }
+    const { title, music } = req.body
+    const album = await albumModel.create({
+      title,
+      music,
+      artist: decoded.id,
+    })
+
+    return res.send({
+      message: 'Album successfully created',
+      album: album,
+    })
+  } catch (error) {
+    console.log(error)
+    return res.send({ message: `Error is: ${error}` })
+  }
+}
+
+module.exports = { createMusic, albumCreate }

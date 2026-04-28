@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 Here’s a polished **README.md** draft for your `spotify-clone-backend` project. It’s structured to look professional, explain the project clearly, and guide contributors or recruiters who check your GitHub:
 
 ```markdown
+=======
+>>>>>>> c336706 (readme file update second time)
 # 🎵 Spotify Clone Backend
 
 A Node.js + Express + MongoDB backend for a Spotify-like music streaming application.  
@@ -9,6 +12,10 @@ This project implements authentication, music and album management, and user rol
 ---
 
 ## 🚀 Features
+<<<<<<< HEAD
+=======
+
+>>>>>>> c336706 (readme file update second time)
 - **User Authentication**: JWT-based login and role management (`user`, `artist`).
 - **Music Management**: Create, fetch, and manage music tracks with artist association.
 - **Album Management**: Create and fetch albums with populated artist details.
@@ -18,6 +25,10 @@ This project implements authentication, music and album management, and user rol
 ---
 
 ## 🛠️ Tech Stack
+<<<<<<< HEAD
+=======
+
+>>>>>>> c336706 (readme file update second time)
 - **Backend Framework**: [Express.js](https://expressjs.com/)
 - **Database**: [MongoDB](https://www.mongodb.com/) with [Mongoose](https://mongoosejs.com/)
 - **Authentication**: [JWT](https://jwt.io/)
@@ -26,6 +37,7 @@ This project implements authentication, music and album management, and user rol
 ---
 
 ## 📂 Project Structure
+<<<<<<< HEAD
 ```
 spotify-clone-backend/
 │── src/
@@ -37,6 +49,20 @@ spotify-clone-backend/
 │── .env                  # Environment variables (ignored in Git)
 │── .gitignore            # Prevents node_modules & .env from being committed
 │── package.json          # Dependencies and scripts
+=======
+
+```
+spotify-clone-backend/
+│── src/
+│   ├── controller/     # Business logic (music, album, auth)
+│   ├── middlewares/    # JWT auth middleware
+│   ├── models/         # Mongoose schemas (User, Music, Album)
+│   ├── routes/         # API route definitions
+│   └── server.js       # Entry point
+│── .env                # Environment variables (ignored in Git)
+│── .gitignore          # Prevents node_modules & .env from being committed
+│── package.json        # Dependencies and scripts
+>>>>>>> c336706 (readme file update second time)
 ```
 
 ---
@@ -44,18 +70,30 @@ spotify-clone-backend/
 ## ⚙️ Installation & Setup
 
 1. **Clone the repository**
+<<<<<<< HEAD
+=======
+
+>>>>>>> c336706 (readme file update second time)
    ```bash
    git clone https://github.com/Misskhat/spotify-clone-backend.git
    cd spotify-clone-backend
    ```
 
 2. **Install dependencies**
+<<<<<<< HEAD
+=======
+
+>>>>>>> c336706 (readme file update second time)
    ```bash
    npm install
    ```
 
 3. **Configure environment variables**  
    Create a `.env` file in the project root:
+<<<<<<< HEAD
+=======
+
+>>>>>>> c336706 (readme file update second time)
    ```
    PORT=5000
    MONGO_URI=your_mongodb_connection_string
@@ -63,9 +101,17 @@ spotify-clone-backend/
    ```
 
 4. **Run the server**
+<<<<<<< HEAD
    ```bash
    npm start
    ```
+=======
+
+   ```bash
+   npm start
+   ```
+
+>>>>>>> c336706 (readme file update second time)
    The backend will run at `http://localhost:5000`.
 
 ---
@@ -73,6 +119,7 @@ spotify-clone-backend/
 ## 📡 API Endpoints
 
 ### Auth
+<<<<<<< HEAD
 - `POST /auth/register` → Register new user/artist  
 - `POST /auth/login` → Login and receive JWT  
 
@@ -84,26 +131,64 @@ spotify-clone-backend/
 - `POST /album` → Create new album (artist only)  
 - `GET /album` → Fetch all albums  
 - `GET /album/:albumById` → Fetch album by ID  
+=======
+
+| Method | Endpoint         | Description              |
+| ------ | ---------------- | ------------------------ |
+| `POST` | `/auth/register` | Register new user/artist |
+| `POST` | `/auth/login`    | Login and receive JWT    |
+
+### Music
+
+| Method | Endpoint | Description                        |
+| ------ | -------- | ---------------------------------- |
+| `POST` | `/music` | Create new music (artist only)     |
+| `GET`  | `/music` | Fetch all music (authorized users) |
+
+### Album
+
+| Method | Endpoint            | Description                    |
+| ------ | ------------------- | ------------------------------ |
+| `POST` | `/album`            | Create new album (artist only) |
+| `GET`  | `/album`            | Fetch all albums               |
+| `GET`  | `/album/:albumById` | Fetch album by ID              |
+>>>>>>> c336706 (readme file update second time)
 
 ---
 
 ## 🔒 Security Notes
+<<<<<<< HEAD
 - **Never commit `.env` or `node_modules`** (already added to `.gitignore`).
+=======
+
+- Never commit `.env` or `node_modules` (already added to `.gitignore`).
+>>>>>>> c336706 (readme file update second time)
 - If secrets were exposed, regenerate them immediately.
 
 ---
 
 ## 🤝 Contributing
+<<<<<<< HEAD
 Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
+=======
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you'd like to change.
+>>>>>>> c336706 (readme file update second time)
 
 ---
 
 ## 📜 License
+<<<<<<< HEAD
 This project is licensed under the MIT License.
+=======
+
+This project is licensed under the [MIT License](LICENSE).
+>>>>>>> c336706 (readme file update second time)
 
 ---
 
 ## 👨‍💻 Author
+<<<<<<< HEAD
 **Md. Mishkat**  
 - GitHub: [@Misskhat](https://github.com/Misskhat)  
 - Focus: MERN stack, backend development, AI-powered web apps
@@ -114,3 +199,10 @@ This project is licensed under the MIT License.
 This README will make your repo look professional and recruiter‑friendly.  
 
 👉 Do you want me to also create a **step-by-step API usage guide with sample requests (using Postman or curl)** so that anyone testing your backend can try it quickly?
+=======
+
+**Md. Mishkat**
+
+- GitHub: [@Misskhat](https://github.com/Misskhat)
+- Focus: MERN stack, backend development, AI-powered web apps
+>>>>>>> c336706 (readme file update second time)

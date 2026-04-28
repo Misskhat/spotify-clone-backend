@@ -20,4 +20,4 @@ router.post('/album', artiestMiddleware, albumCreate)
 router.get('/', authMiddleware, getAllMusic)
 router.get('/album', authMiddleware, getAllAlbum)
 
-module.exports = router
+module.exports = router 

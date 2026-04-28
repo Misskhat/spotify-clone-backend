@@ -7,12 +7,10 @@ const authMiddleware = async (req, res, next) => {
   }
   try {
     const decoded = jwt.verify(token, process.env.JWT_TOKEN)
-    if (decoded.role !== 'user' || decoded.role !== 'artist') {
+    if (decoded.role !== 'user' && decoded.role !== 'artist') {
       return res.status(401).json({ message: 'Unauthorized access' })
     }
-
     req.user = decoded
-
     next()
   } catch (error) {
     console.log(error)
